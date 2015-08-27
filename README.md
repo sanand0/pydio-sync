@@ -44,10 +44,10 @@ python -m pydio.main
 python -m pydio.main 
         --file=/path/to/config.json
 ```
-In that case, the JSON file must contain an array of "jobs configs" objects, including a __type__ key with value "JobConfig":
+In that case, the JSON file must contain an dictionary of "jobs configs" objects, including a __type__ key with value "JobConfig":
 ```
-[
-    {
+{
+    "id": {
         "__type__"  : "JobConfig", // This one is important!
         "server"    : "http://mydomain.tld/path",
         "workspace" : "ws_alias_or_id",
@@ -57,7 +57,7 @@ In that case, the JSON file must contain an array of "jobs configs" objects, inc
         "direction" : "bi", // can be "up", "down", "bi"
         "active"    : true
     }
-]
+}
 ```
 
 ## Development Setup
